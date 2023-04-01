@@ -18,8 +18,10 @@ int main() {
 	// Computer case components
 	auto board = new MotherBoard("ASUS PRIME B450");
 	auto supply = new PowerSupply("1000W Phanteks");
+	auto ssd = new SSD("Samsung 960 EVO");
 	comp_case->add(board);
 	comp_case->add(supply);
+	comp_case->add(ssd);
 
 	// Mother board components
 	auto ram = new RAM("Corsair 64 GB");
