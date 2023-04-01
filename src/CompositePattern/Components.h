@@ -43,10 +43,10 @@ public:
 	virtual ~RAM() = default;
 };
 
-class SDD : public BaseComponents {
+class SSD : public BaseComponents {
 public:
-	SDD(const std::string& name) : BaseComponents(name) {};
-	virtual ~SDD() = default;
+	SSD(const std::string& name) : BaseComponents(name) {};
+	virtual ~SSD() = default;
 };
 
 class PowerSupply : public BaseComponents {
