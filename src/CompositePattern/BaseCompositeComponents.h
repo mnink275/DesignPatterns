@@ -1,12 +1,17 @@
 #pragma once
 
 #include <list>
+#include <algorithm>
 #include "BaseComponents.h"
 
 // Composite base class
 class BaseCompositeComponents : public BaseComponents {
 public:
-	virtual ~BaseCompositeComponents() = default;
+	virtual ~BaseCompositeComponents() {
+		for (auto& ptr : components) {
+			delete ptr;
+		}
+	}
 
 	int power() override {
 		// TODO
@@ -17,17 +22,17 @@ public:
 		return 0;
 	}
 
-	void add(BaseComponents* eq) override {
-		equipment.push_back(eq);
+	void add(BaseComponents* component) override {
+		components.push_back(component);
 	}
-	void remove(BaseComponents* eq) override {
-		auto it = find(equipment.begin(), equipment.end(), eq);
-		equipment.erase(it);
+	void remove(BaseComponents* component) override {
+		auto it = find(components.begin(), components.end(), component);
+		components.erase(it);
 	}
 
 protected:
 	BaseCompositeComponents(const std::string& name) : BaseComponents(name) {};
 
 private:
-	std::list<BaseComponents*> equipment;
+	std::list<BaseComponents*> components;
 };

@@ -78,11 +78,11 @@ public:
 		return 0;
 	}
 
-	virtual void add(BaseComponents* eq) {
-		throw "This equipment cannot contain other equipments!";
+	virtual void add(BaseComponents* component) {
+		throw std::runtime_error("This equipment cannot contain other equipments!");
 	}
-	virtual void remove(BaseComponents* eq) {
-		throw "This equipment cannot contain other equipments!";
+	virtual void remove(BaseComponents* component) {
+		throw std::runtime_error("This equipment cannot contain other equipments!");
 	}
 protected:
 	BaseComponents(const std::string& name) : name(name) {};
