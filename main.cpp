@@ -1,5 +1,5 @@
 #include <iostream>
-#include "src/CompositePattern/Components.h"
+#include "src/Composite/Components.h"
 
 int main() {
 	// Whole PC

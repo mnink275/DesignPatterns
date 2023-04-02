@@ -9,9 +9,9 @@ set(CMAKE_CXX_STANDARD 17)
 # target_include_directories(header_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(DesignPatterns
-               "src/CompositePattern/BaseComponents.h"
-               "src/CompositePattern/BaseCompositeComponents.h"
-               "src/CompositePattern/Components.h"
+               "src/Composite/BaseComponents.h"
+               "src/Composite/BaseCompositeComponents.h"
+               "src/Composite/Components.h"
                "main.cpp"
                )
 
