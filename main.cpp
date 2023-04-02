@@ -1,5 +1,6 @@
 #include <iostream>
 #include "src/Composite/Components.h"
+#include "src/Strategy/Context.h"
 
 int main() {
 	// Whole PC
@@ -49,4 +50,16 @@ int main() {
 	* (with destructor of BaseCompositeComponents class is correct.
 	*/
 	delete pc;
+
+
+	auto context = std::make_unique<Context>();
+	
+	context->setStrategy(std::make_unique<StrategyA>());
+	context->VeryImportantOperation();
+
+	context->setStrategy(std::make_unique<StrategyB>());
+	context->VeryImportantOperation();
+
+	context->setStrategy(std::make_unique<StrategyC>());
+	context->VeryImportantOperation();
 }
