@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <memory>
 #include "BaseComponents.h"
 #include "BaseCompositeComponents.h"
 

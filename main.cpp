@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "src/Composite/Components.h"
 #include "src/Strategy/Context.h"
 
