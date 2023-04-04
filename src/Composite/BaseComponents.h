@@ -13,8 +13,8 @@ public:
 	virtual int power() = 0;
 	virtual int netPrice() = 0;
 
-	virtual void add(BaseComponents* component) = 0;
-	virtual void remove(BaseComponents* component) = 0;
+	virtual void add(std::unique_ptr<BaseComponents>&& component) = 0;
+	virtual void remove(std::unique_ptr<BaseComponents>&& component) = 0;
 };
 
 // Base class
@@ -41,11 +41,11 @@ public:
 		return 0;
 	}
 
-	virtual void add(BaseComponents* component) {
-		throw std::runtime_error("This equipment cannot contain other equipments!");
+	virtual void add(std::unique_ptr<BaseComponents>&& component) {
+		throw std::runtime_error("This component cannot contain other components!");
 	}
-	virtual void remove(BaseComponents* component) {
-		throw std::runtime_error("This equipment cannot contain other equipments!");
+	virtual void remove(std::unique_ptr<BaseComponents>&& component) {
+		throw std::runtime_error("This component cannot contain other components!");
 	}
 protected:
 	BaseComponents(const std::string& name) : name(name) {};
