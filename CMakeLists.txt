@@ -9,26 +9,25 @@ if(CMAKE_GENERATOR MATCHES "Visual Studio 17 2022")
 endif()
 
 include_directories(
-    ${PROJECT_SOURCE_DIR}/src 
+    ${PROJECT_SOURCE_DIR}/src
+    ${PROJECT_SOURCE_DIR}/include 
 )
 
-file(GLOB all_srcs
-    "main.cpp"
-    "src/Composite/BaseComponents.h"
-    "src/Composite/BaseCompositeComponents.h"
-    "src/Composite/Components.h"
-    "src/Strategy/Context.h"
-    "src/Strategy/Strategy.h")
+file(GLOB allSrcs
+    "${PROJECT_SOURCE_DIR}/src/*.cpp"
+    "${PROJECT_SOURCE_DIR}/include/*.h"
+)
 
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
     option(ProjectTests "build tests (or no)" ON)
     if (ProjectTests)
-        add_library(example_tests ${all_srcs})
+        add_library(example_tests ${allSrcs})
         enable_testing()
         add_subdirectory(gtests)
     endif()
 endif()
 
-add_executable(DesignPatterns ${all_srcs})
-
+add_executable(DesignPatterns ${allSrcs})
+target_include_directories(DesignPatterns PRIVATE ${PROJECT_SOURCE_DIR}/include/Composite)
+target_include_directories(DesignPatterns PRIVATE ${PROJECT_SOURCE_DIR}/include/Strategy)
 target_compile_options(DesignPatterns PRIVATE "-Wall")
