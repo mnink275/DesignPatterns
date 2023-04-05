@@ -5,4 +5,5 @@ Based on the book: "Design Patterns. Elements of ReusableObject-Oriented Softwar
 Examples for each design pattern writing for learning and design patterns understanding.
 
 Design Patterns:
-- [Composite Pattern](https://github.com/mnink275/DesignPatterns/blob/main/src/CompositePattern/README.md)
+- [Composite](https://github.com/mnink275/DesignPatterns/blob/main/src/CompositePattern/README.md)
+- [Strategy](https://github.com/mnink275/DesignPatterns/blob/main/include/Strategy/README.md)
