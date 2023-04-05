@@ -3,7 +3,7 @@
 #include <memory>
 #include "Strategy.h"
 
-class Context {
+class Context final {
 public:
 	void setStrategy(std::unique_ptr<Strategy>&& input_strategy) {
 		curr_strategy = std::move(input_strategy);

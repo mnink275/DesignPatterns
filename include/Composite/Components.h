@@ -6,59 +6,59 @@
 #include "BaseCompositeComponents.h"
 
 // Composite components
-class MotherBoard : public BaseCompositeComponents {
+class MotherBoard final : public BaseCompositeComponents {
 public:
 	MotherBoard(const std::string& name) : BaseCompositeComponents(name) {}
 };
 
-class ComputerCase : public BaseCompositeComponents {
+class ComputerCase final : public BaseCompositeComponents {
 public:
 	ComputerCase(const std::string& name) : BaseCompositeComponents(name) {}
 };
 
-class PersonalComputer : public BaseCompositeComponents {
+class PersonalComputer final : public BaseCompositeComponents {
 public:
 	PersonalComputer(const std::string& name) : BaseCompositeComponents(name) {}
 };
 
 
 // Unit components
-class GPU : public BaseComponents {
+class GPU final : public BaseComponents {
 public:
 	GPU(const std::string& name) : BaseComponents(name) {};
 };
 
-class CPU : public BaseComponents {
+class CPU final : public BaseComponents {
 public:
 	CPU(const std::string& name) : BaseComponents(name) {};
 };
 
-class RAM : public BaseComponents {
+class RAM final : public BaseComponents {
 public:
 	RAM(const std::string& name) : BaseComponents(name) {};
 };
 
-class SSD : public BaseComponents {
+class SSD final : public BaseComponents {
 public:
 	SSD(const std::string& name) : BaseComponents(name) {};
 };
 
-class PowerSupply : public BaseComponents {
+class PowerSupply final : public BaseComponents {
 public:
 	PowerSupply(const std::string& name) : BaseComponents(name) {};
 };
 
-class Monitor : public BaseComponents {
+class Monitor final : public BaseComponents {
 public:
 	Monitor(const std::string& name) : BaseComponents(name) {};
 };
 
-class Mouse: public BaseComponents {
+class Mouse final : public BaseComponents {
 public:
 	Mouse(const std::string& name) : BaseComponents(name) {};
 };
 
-class Keyboard : public BaseComponents {
+class Keyboard final : public BaseComponents {
 public:
 	Keyboard(const std::string& name) : BaseComponents(name) {};
 };

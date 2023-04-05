@@ -10,7 +10,12 @@ class BaseCompositeComponents : public BaseComponents {
 public:
 	virtual ~BaseCompositeComponents() = default;
 
-	std::size_t getSize() override {
+	BaseCompositeComponents(const  BaseCompositeComponents&) = delete;
+	BaseCompositeComponents& operator=(const  BaseCompositeComponents&) = delete;
+	BaseCompositeComponents(BaseCompositeComponents&&) = default;
+	BaseCompositeComponents& operator=(BaseCompositeComponents&&) = default;
+
+	std::size_t getSize() const override {
 		return components.size();
 	}
 
@@ -22,7 +27,7 @@ public:
 		components.erase(it);
 	}
 
-	kIterator createIterator() override {
+	kIterator createIterator() const override {
 		return components.cbegin();
 	}
 protected:

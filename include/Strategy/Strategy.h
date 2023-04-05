@@ -6,26 +6,32 @@
 class Strategy {
 public:
 	virtual std::string DoAlgorithm() = 0;
+	Strategy() = default;
 	virtual ~Strategy() = default;
+
+	Strategy(const Strategy&) = delete;
+	Strategy& operator=(const Strategy&) = delete;
+	Strategy(Strategy&&) = default;
+	Strategy& operator=(Strategy&&) = default;
 };
 
 
 // Concrete strategies
-class StrategyA : public Strategy {
+class StrategyA final : public Strategy {
 public:
 	std::string DoAlgorithm() override {
 		return "StrategyA algorithm";
 	}
 };
 
-class StrategyB : public Strategy {
+class StrategyB final : public Strategy {
 public:
 	std::string DoAlgorithm() override {
 		return "StrategyB algorithm";
 	}
 };
 
-class StrategyC : public Strategy {
+class StrategyC final : public Strategy {
 public:
 	std::string DoAlgorithm() override {
 		return "StrategyC algorithm";
