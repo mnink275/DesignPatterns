@@ -20,13 +20,12 @@ file(GLOB allSrcs
     "${PROJECT_SOURCE_DIR}/include/*.h"
 )
 
-if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-    option(ProjectTests "build tests (or no)" ON)
-    if (ProjectTests)
-        add_library(example_tests ${allSrcs})
-        enable_testing()
-        add_subdirectory(gtests)
-    endif()
+option(ProjectTests "build tests (or no)" OFF)
+message(STATUS "ProjectTests: ${ProjectTests}")
+if(ProjectTests)
+    add_library(example_tests ${allSrcs})
+    enable_testing()
+    add_subdirectory(gtests)
 endif()
 
 add_executable(DesignPatterns ${allSrcs})
