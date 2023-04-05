@@ -62,8 +62,9 @@ TEST(CompositePattern, TraversingIntoComponents) {
 	}
 
 	// std::cout << "The PC is built successfully!" << "\n";
-	
+}
 
+TEST(CompositePattern, ThrowsFromUnitComponent) {
 	/*
 	* It is impossible to add a component to a unit component, but the possibility
 	* of calling such a method exists for the sameness of the interface.
