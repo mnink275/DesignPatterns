@@ -3,6 +3,8 @@
 #include "Composite/Components.h"
 #include "Dynamic Decorator/Circle.h"
 #include "Dynamic Decorator/ColorDecorator.h"
+#include "Static Decorator/BaseCircle.h"
+#include "Static Decorator/StaticColorDecorator.h"
 
 TEST(StrategyPattern, CallingRightStrategy) {
 	// Some context that can use different algorithms (strategies)
@@ -75,11 +77,20 @@ TEST(CompositePattern, ThrowsFromUnitComponent) {
 	EXPECT_THROW(cpu->add(std::make_unique<GPU>("NVIDIA RTX 4090")), std::runtime_error);
 }
 
-TEST(DecoratorPattern, DecoratorFunctionality) {
+TEST(DecoratorPattern, DynamicDecoratorFunctionality) {
 	// The common circle object
 	auto circle = std::make_unique<Circle>();
 	EXPECT_EQ(circle->getName(), "A circle of radius 10");
 	// The colored circle object == a circle wrapped by the ColorDecorator
 	auto colored_circle = std::make_unique<ColorDecorator>(std::move(circle), "blue");
 	EXPECT_EQ(colored_circle->getName(), "A circle of radius 10 which is colored blue");
+}
+
+TEST(DecoratorPattern, StaticDecoratorFunctionality) {
+	// The common circle object
+	auto circle = std::make_unique<BaseCircle>();
+	EXPECT_EQ(circle->getName(), "A circle of radius 10");
+	// The colored circle object == a circle wrapped by the ColorDecorator
+	auto colored_circle = std::make_unique<ColoredShape<BaseCircle>>("red");
+	EXPECT_EQ(colored_circle->getName(), "A circle of radius 10 which is colored red");
 }
