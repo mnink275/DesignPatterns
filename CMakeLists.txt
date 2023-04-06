@@ -19,13 +19,13 @@ file(GLOB allSrcs
     "${PROJECT_SOURCE_DIR}/include/*.h"
 )
 
-option(ProjectTests "build tests (or no)" OFF)
-message(STATUS "ProjectTests: ${ProjectTests}")
-if(ProjectTests)
-    add_library(example_tests ${allSrcs})
-    enable_testing()
-    add_subdirectory(gtests)
-endif()
+option(ProjectTests "build tests (or no)" ON)
+    # message(STATUS "ProjectTests: ${ProjectTests}")
+    if(ProjectTests)
+        add_library(example_tests ${allSrcs})
+        enable_testing()
+        add_subdirectory(gtests)
+    endif()
 
 add_executable(DesignPatterns ${allSrcs})
 target_include_directories(DesignPatterns PRIVATE ${PROJECT_SOURCE_DIR}/include/Composite)
