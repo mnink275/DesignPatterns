@@ -5,6 +5,7 @@
 #include "Dynamic Decorator/ColorDecorator.h"
 #include "Static Decorator/BaseCircle.h"
 #include "Static Decorator/StaticColorDecorator.h"
+#include "Abstract Factory/BuildingsFactory.h"
 
 TEST(StrategyPattern, CallingRightStrategy) {
 	// Some context that can use different algorithms (strategies)
@@ -93,4 +94,13 @@ TEST(DecoratorPattern, StaticDecoratorFunctionality) {
 	// The colored circle object == a circle wrapped by the ColorDecorator
 	auto colored_circle = std::make_unique<ColoredShape<BaseCircle>>("red");
 	EXPECT_EQ(colored_circle->getName(), "A circle of radius 10 which is colored red");
+}
+
+TEST(FactoryMethodPattern, Functionality) {
+	auto buildings_factory = std::make_unique<MakeBuilding>();
+	//std::unique_ptr<Building> building;
+	auto building = buildings_factory->makeBuilding(FARM);
+	EXPECT_EQ(building->getName(), "Farm has been built!");
+	building = buildings_factory->makeBuilding(FORGE);
+	EXPECT_EQ(building->getName(), "Forge has been built!");
 }
