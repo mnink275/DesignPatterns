@@ -1,4 +1,5 @@
-include(FetchContent)
+
+# Recording option 'googletests' that describes how to populate the specified content
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/7ee260c54921571b18b15049304426fe151c1265.zip
