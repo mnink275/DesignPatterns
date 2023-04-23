@@ -7,3 +7,5 @@
 - Design Patterns:
   - [Composite](https://github.com/mnink275/DesignPatterns/blob/main/src/CompositePattern/README.md)
   - [Strategy](https://github.com/mnink275/DesignPatterns/blob/main/include/Strategy/README.md)
+  - [Dynamic Decorator](https://github.com/mnink275/DesignPatterns/tree/main/include/Dynamic%20Decorator/README.md)
+  - [Static Decorator](https://github.com/mnink275/DesignPatterns/tree/main/include/Static%20Decorator/README.md)
