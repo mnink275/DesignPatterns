@@ -28,6 +28,4 @@ target_include_directories(DesignPatterns PRIVATE ${PROJECT_SOURCE_DIR}/include/
 target_include_directories(DesignPatterns PRIVATE ${PROJECT_SOURCE_DIR}/include/Strategy)
 target_compile_options(DesignPatterns PRIVATE "-Wall")
 
-if(BUILD_TESTING)
-  add_subdirectory(gtests)
-endif()
+add_subdirectory(gtests)
